@@ -29,6 +29,18 @@ module.exports = {
         test: /\.html$/,
         loader: 'html-loader'
       },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['react']
+            }
+          },
+        ],
+      }
     ]
   },
   resolve: {
